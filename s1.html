@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>isqip</title>
+    <style>
+      .main-container {
+        width: 100%;
+      }
+      .side-bar {
+        width: 200px;
+        position: fixed;
+      }
+      .container {
+        margin-left: 200px;
+        position: absolute;
+      }
+      .side-bar {
+        margin-top: 0px;
+        height: 100%;
+        text-decoration: none;
+        background-color: grey;
+      }
+      .container {
+        padding: 24px 15px 12px 44px;
+      }
+      #contact {
+        display: none;
+      }
+      #some {
+        display: none;
+      }
+      
+      input[type="text"] {
+        padding: 12px;
+        border-radius: 5px;
+      }
+      input[type="submit"] {
+        padding: 12px;
+        border-radius: 5px;
+        background-color: blue;
+        color: #ffffff;
+      }
+      input[type="submit"]:hover {
+        background-color: lightblue;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="side-bar">
+        <div
+          class="side-bar-element"
+          data-page="home"
+          <onclick="showPage('home')"
+        >
+          Home
+        </div>
+        
+      </div>
+      <div class="container">
+        <div id="home">
+          <h1>isqip survey form</h1>
+          <div class="random-box">
+          <form id="form" action="" onsubmit="submitFunction()">
+            Enter name : <input
+              type="text"
+              id="first"
+              name="first"
+              placeholder="Name"
+              id=""
+            /><br><br><br><br>
+            Branch :   
+                <select name="" id="">
+                    <option>
+                        CS
+                    </option>
+                    <option>
+                        EC
+                    </option>
+                    <option>
+                        EEE
+                    </option>
+                </select>
+                
+                  <br><br><br><br><br>  How was the event  :  
+                
+                <input type="radio" name="opt" value="Excellent">Excellent
+                <input type="radio" name="opt" value="good">Good
+                <input type="radio" name="opt" value="Satisfactionary">Satisfactionary
+                <input type="radio" name="opt" value="poor">poor
+                
+                   <br><br><br><br><br> How was the workshops and talks  :   
+                
+                <input 
+                id =""
+                type="radio"
+                name="opt1"
+                />Excellent
+                <input
+                id = ""
+                type="radio"
+                name="opt1"
+                />Good
+                <input
+                id = ""
+                type="radio"
+                name="opt1"
+                />Satisfactionary
+                <input
+                id = ""
+                type="radio"
+                name="opt1"
+                />poor
+                   <br><br><br><br><br> How was the hackathon  :  
+    
+                <input 
+                id =""
+                type="radio"
+                name="opt2"
+                />Excellent
+                <input
+                id = ""
+                type="radio"
+                name="opt2"
+                />Good
+                <input
+                id = ""
+                type="radio"
+                name="opt2"
+                />Satisfactionary
+                <input
+                id = ""
+                type="radio"
+                name="opt2"
+                />poor<br><br><br><br>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script>
+      function showPage(name = "home") {
+        const availableIds = ["home"];
+        for (let id of availableIds) {
+          const element = document.getElementById(id);
+          if (id == name) {
+            element.style.display = "block";
+          } else {
+            element.style.display = "none";
+          }
+        }
+      }
+      document
+        .getElementById("form")
+        .addEventListener("click", function(event) {
+          event.preventDefault();
+          const Name = document.getElementById("first").value;
+          const lastName = document.getElementById("last").value;
+          console.log(firstName, lastName);
+        });
+    </script>
+  </footer>
+</html>
